@@ -80,19 +80,19 @@ class Configuration:
             client=self.client
         )
         if self.net == 'mainnet':
-            tag = 'stable'
+            tag = 'latest'
         elif self.net == 'testnet':
             tag = 'testnet'
         else:
             tag = 'latest'
         if self.api == 'True':  # this is dirty, should be refactored
-            tomochain_ports = {'30303/udp': 30303, '30303/tcp': 30303,
-                               '8545/tcp': 8545, '8546/tcp': 8546}
+            tomochain_ports = {'9050/udp': 9050, '9050/tcp': 9050,
+                               '8050/tcp': 8050, '8050/tcp': 8050}
         else:
-            tomochain_ports = {'30303/udp': 30303, '30303/tcp': 30303}
-        self.services['tomochain'] = Service(
-            name='{}_tomochain'.format(self.name),
-            image='tomochain/node:{}'.format(
+            tomochain_ports = {'9050/udp': 9050, '9050/tcp': 9050}
+        self.services['rupaya'] = Service(
+            name='{}_rupaya'.format(self.name),
+            image='rupaya/node:{}'.format(
                 'devnet' if tag == 'latest' else tag
             ),
             network=self.networks['tmn'].name,
@@ -102,7 +102,7 @@ class Configuration:
             },
             volumes={
                 self.volumes['chaindata'].name: {
-                    'bind': '/tomochain', 'mode': 'rw'
+                    'bind': '/rupaya', 'mode': 'rw'
                 }
             },
             ports=tomochain_ports,

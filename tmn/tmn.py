@@ -11,7 +11,7 @@ logger = logging.getLogger('tmn')
 docker_url = None
 
 
-@click.group(help=('Tomo MasterNode (tmn) is a cli tool to help you run a Tomo'
+@click.group(help=('Rupaya MasterNode (tmn) is a cli tool to help you run a Rupaya'
                    'chain masternode'))
 @click.option('--debug', is_flag=True, help='Enable debug mode')
 @click.option('--docker', metavar='URL', help='Url to the docker server')
@@ -25,13 +25,13 @@ def main(debug: bool, docker: str) -> None:
     docker_url = docker
 
 
-@click.command(help='Display TomoChain documentation link')
+@click.command(help='Display Rupaya documentation link')
 def docs() -> None:
     "Link to the documentation"
     display.link_docs()
 
 
-@click.command(help='Start your TomoChain masternode')
+@click.command(help='Start your Rupaya masternode')
 @click.option('--name', metavar='NAME', help='Your masternode\'s name')
 @click.option('--net', type=click.Choice(['mainnet', 'testnet', 'devnet']),
               help='The environment your masternode will connect to')
@@ -85,7 +85,7 @@ def start(name: str, net: str, pkey: str, api: bool) -> None:
     display.newline()
 
 
-@click.command(help='Stop your TomoChain masternode')
+@click.command(help='Stop your Rupaya masternode')
 def stop() -> None:
     "Stop the masternode containers"
     configuration = Configuration(docker_url=docker_url)
@@ -102,7 +102,7 @@ def stop() -> None:
     display.newline()
 
 
-@click.command(help='Show the status of your TomoChain masternode')
+@click.command(help='Show the status of your Rupaya masternode')
 def status() -> None:
     "Show the status of the masternode containers"
     configuration = Configuration(docker_url=docker_url)
@@ -137,7 +137,7 @@ def status() -> None:
     display.newline()
 
 
-@click.command(help='Show details about your TomoChain masternode')
+@click.command(help='Show details about your Rupaya masternode')
 def inspect() -> None:
     "Show details about the tomochain masternode"
     configuration = Configuration(docker_url=docker_url)
@@ -206,7 +206,7 @@ def update() -> None:
     display.newline()
 
 
-@click.command(help='Remove your TomoChain masternode')
+@click.command(help='Remove your Rupaya masternode')
 @click.option('--confirm', is_flag=True)
 def remove(confirm: bool) -> None:
     "Remove the masternode (containers, networks volumes)"
