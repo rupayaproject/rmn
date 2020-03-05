@@ -1,11 +1,6 @@
-# tmn <a href="https://gitter.im/tomochain/tmn"><img align="right" src="https://badges.gitter.im/gitterHQ/gitter.png"></a>
+# rmn 
 
-| Branch  | Status | Coverage |
-| --- | --- | --- |
-| Master | [![Build Status](https://travis-ci.org/tomochain/tmn.svg?branch=master)](https://travis-ci.org/tomochain/tmn) | [![Coverage Status](https://coveralls.io/repos/github/tomochain/tmn/badge.svg?branch=master)](https://coveralls.io/github/tomochain/tmn?branch=master) |
-| Develop | [![Build Status](https://travis-ci.org/tomochain/tmn.svg?branch=develop)](https://travis-ci.org/tomochain/tmn) | [![Coverage Status](https://coveralls.io/repos/github/tomochain/tmn/badge.svg?branch=develop)](https://coveralls.io/github/tomochain/tmn?branch=develop) |
-
-Tomo MasterNode (tmn) is a cli tool to help you run a TomoChain masternode
+Rupaya MasterNode (tmn) is a cli tool to help you run a Rupaya masternode
 
 ## Running and applying a masternode
 
