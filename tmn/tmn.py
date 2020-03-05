@@ -11,8 +11,8 @@ logger = logging.getLogger('tmn')
 docker_url = None
 
 
-@click.group(help=('Rupaya MasterNode (tmn) is a cli tool to help you run a Rupaya'
-                   'chain masternode'))
+@click.group(help=('Rupaya MasterNode (tmn) is a cli tool to help you run a'
+                   'Rupaya masternode'))
 @click.option('--debug', is_flag=True, help='Enable debug mode')
 @click.option('--docker', metavar='URL', help='Url to the docker server')
 @click.version_option(version=__version__)
